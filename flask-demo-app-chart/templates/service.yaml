@@ -7,12 +7,12 @@ metadata:
   name: flask-demo-app-service
 spec:
   ports:
-  - name: 80-80
-    port: 80
-    protocol: TCP
-    targetPort: 80
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+      nodePort: 30000
   selector:
-    app: flask-demo-app-service
+    app: flask-demo-app
   type: NodePort
 status:
   loadBalancer: {}
