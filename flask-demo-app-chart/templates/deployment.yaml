@@ -1,24 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    app: flask-demo-app
-  name: flask-demo-app
+  name: flask-demo-app-deployment
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: flask-demo-app
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: flask-demo-app
     spec:
       containers:
-      - image: 2kunal6/test-images:tagname
-        name: flask-demo-app
-        resources: {}
-status: {}
+        - image: 2kunal6/test-images:tagname
+          name: test-image-name
