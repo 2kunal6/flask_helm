@@ -8,4 +8,7 @@ steps:
 - try removing the compulsion to run docker with sudo:
   - sudo groupadd docker
   - sudo usermod -aG docker $USER
-- helm install flask-demo-app ./flask-demo-app-chart
+- minikube start
+- helm install flask-demo-app flask-demo-app-chart
+- access website: http://192.168.49.2:30000/ 
+  - 'minikube ip' will give the above ip address

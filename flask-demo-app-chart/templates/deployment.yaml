@@ -11,6 +11,13 @@ spec:
       labels:
         app: flask-demo-app
     spec:
+      volumes:
+        - name: name-me
+          hostPath:
+            path: /home/docker/
       containers:
-        - image: 2kunal6/test-images:tagname
+        - image: 2kunal6/test-images:latest
           name: test-image-name
+          volumeMounts:
+            - name: name-me
+              mountPath: /app/in_container_location/
